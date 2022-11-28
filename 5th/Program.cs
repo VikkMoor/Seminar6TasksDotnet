@@ -10,7 +10,7 @@ void PrintArray(int[] arrN)
         pos++;
     }
 }
-Console.Write("Enter array elements in order separated by commas or spaces: ");
+Console.Write("Enter array elements in order separated by commas or spaces or both: ");
 string s = Console.ReadLine();
 string[] nums = s.Split(new char[] { ' ', '.', ',' }, StringSplitOptions.RemoveEmptyEntries);
 int[] array = nums.Select(Int32.Parse).ToArray();
