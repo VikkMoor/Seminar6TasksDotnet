@@ -6,15 +6,13 @@
 void FillArray(int[] arr1)
 {
     int len1 = arr1.Length;
-    int ind1 = 0;
-    while (ind1 < len1)
+    int pos1 = 0;
+    while (pos1 < len1)
     {
-        arr1[ind1] = new Random().Next(0, 10);
-        ind1++;
+        arr1[pos1] = new Random().Next(0, 10);
+        pos1++;
     }
 }
-
-
 void PrintArray(int[] arr2)
 {
     int len2 = arr2.Length;
@@ -25,17 +23,20 @@ void PrintArray(int[] arr2)
         pos2++;
     }
 }
+void ReverseArray(int[] arr3)
+{
+    int digit = 0;
+    int len3 = arr3.Length;
+    for (int i = 0; i < len3 / 2; i++)
+    {
+        digit = arr3[i];
+        arr3[i] = arr3[len3 - 1 - i];
+        arr3[len3 - 1 - i] = digit;
+    }
+}
 int[] array = new int[7];
 FillArray(array);
 PrintArray(array);
 Console.WriteLine();
-int digit = 0;
-int len = array.Length;
-for (int i = 0; i < len / 2; i++)
-{
-    digit = array[i];
-    array[i] = array[len - 1 - i];
-    array[len - 1 - i] = digit;
-   }
-
+ReverseArray(array);
 PrintArray(array);
